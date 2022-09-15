@@ -29,11 +29,16 @@ def game():
   print(logo)
   score = 0
   game_should_continue = True
-  
+  # Choose random data for both account
+  account_a = random_choice_data(data)
+  account_b = random_choice_data(data)
   while game_should_continue:
-    # Choose random data for both account
-    account_a = random_choice_data(data)
+    account_a = account_b
     account_b = random_choice_data(data)
+    
+    while account_a == account_b:
+      account_b = random_choice_data(data)
+   
     # Formate choose data
     formate_data_a = formate_data(account_a)
     formate_data_b = formate_data(account_b)
